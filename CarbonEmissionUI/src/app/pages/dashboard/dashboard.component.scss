@@ -1,0 +1,22 @@
+.Dashboard-tab{
+    background-color: #454149;
+}
+
+.font-size{
+
+ font-size: 24px;
+}
+
+.popup-model {
+    position: absolute;
+    top: 74px;
+    bottom: 0;
+    left: 300px;
+    width: 800px;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+ }
+ .modal-dialog{
+    margin: 0px !important;
+ }

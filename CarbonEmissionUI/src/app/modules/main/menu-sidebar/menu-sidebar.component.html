@@ -1,0 +1,42 @@
+<!-- Brand Logo -->
+<a [routerLink]="['/']" class="brand-link">
+    <!-- <pf-image
+        src="assets/img/logo.png"
+        alt="Carbon Emission Logo"
+        class="brand-image"
+        height="33"
+        width="33"
+        rounded
+        style="opacity: 0.8"
+    ></pf-image> -->
+    <pf-image
+        class="pl-4"
+        src="assets/img/ekobon.png"
+        alt="Carbon Emission Logo"
+        height="33"
+    ></pf-image>
+</a>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <!-- Sidebar user (optional) -->
+
+    <!-- <div class="form-inline">
+        <app-sidebar-search></app-sidebar-search>
+    </div> -->
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2" style="overflow-y: hidden">
+        <ul
+            class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false"
+        >
+            <div *ngFor="let item of menu">
+                <p class="text-white Text-opacity">{{ item.head }}</p>
+                <app-menu-item [menuItem]="item"></app-menu-item>
+            </div>
+        </ul>
+    </nav>
+</div>

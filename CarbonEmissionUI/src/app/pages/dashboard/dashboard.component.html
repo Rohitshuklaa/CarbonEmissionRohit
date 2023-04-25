@@ -1,0 +1,238 @@
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="m-0 pl-2 text-white text-style font-size">
+                    Dashboard
+                </h3>
+            </div>
+
+            <!-- <<----MODEL POPUP ----->
+
+            <div
+                class="modal popup-model"
+                tabindex="-1"
+                role="dialog"
+                [ngStyle]="{display: display}"
+            >
+                <div class="modal-dialog popup-model" role="document">
+                    <div class="modal-content Dashboard-tab">
+                        <div class="modal-body">
+                            <form class="col-12">
+                                <select
+                                    class="form-control select2 Dashboard-tab text-white"
+                                >
+                                    <option class="text-white">Select</option>
+                                    <option class="text-white">Chennai</option>
+                                    <option class="text-white">Delhi</option>
+                                    <option class="text-white">
+                                        Bengaluru
+                                    </option>
+                                    <option class="text-white">Kolkata</option>
+                                    <option class="text-white">Indore</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-default"
+                                (click)="onCloseHandled()"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col -->
+
+            <div class="col-sm-6 d-flex flex-row justify-content-end mb-2">
+                <div
+                    class="mx-2 px-4 pt-2 d-flex flex-row rounded Regular shadow Dashboard-tab pointer"
+                >
+                    <img
+                        class="pt-1"
+                        src="assets/img/Location.png "
+                        height="20vh"
+                    />
+                    <p class="text-white pl-2" (click)="openModal()">
+                        Location
+                    </p>
+                </div>
+
+                <input
+                    type="date"
+                    class="text-white Dashboard-tab px-2 mx-2 pt-2 rounded Regular shadow"
+                />
+
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <div
+        class="row Dashboard-tab text-style rounded Regular shadow text-light d-flex flex-row justify-content-between mx-4 mb-3 pt-3 px-3"
+    >
+        <div>
+            <p class="pointer" [routerLink]="['/']">Envirnoment</p>
+        </div>
+        <div>
+            <p class="pointer" [routerLink]="['/energy-section']">Energy</p>
+        </div>
+        <div>
+            <p class="pointer" [routerLink]="['/emission-section']">Emission</p>
+        </div>
+        <div>
+            <p class="pointer" [routerLink]="['/waste-section']">Waste</p>
+        </div>
+        <div>
+            <p class="pointer" [routerLink]="['/water-section']">Water</p>
+        </div>
+        <div>
+            <p class="pointer" [routerLink]="['/social-section']">Social</p>
+        </div>
+        <div>
+            <p class="pointer" [routerLink]="['/governance-section']">
+                Governance
+            </p>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div
+                        class="small-box Dashboard-tab text-white text-style text-center"
+                    >
+                        <p class="pt-2">Total Energy Consumption</p>
+
+                        <div class="inner text-center">
+                            <h4>906.41M</h4>
+
+                            <p>kwh</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div
+                        class="small-box Dashboard-tab text-white text-style text-center"
+                    >
+                        <p class="pt-2">Total GHG Consumption</p>
+                        <div class="inner text-center">
+                            <h4>776.11k</h4>
+
+                            <p>tC02e</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div
+                        class="small-box Dashboard-tab text-white text-style text-center"
+                    >
+                        <p class="pt-2">Total Water Consumption</p>
+                        <div class="inner text-center">
+                            <h4>111.87k</h4>
+
+                            <p>Liter</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div
+                        class="small-box Dashboard-tab text-white text-style text-center"
+                    >
+                        <p class="pt-2">Total Waste Consumption</p>
+                        <div class="inner text-center">
+                            <h4>141.41M</h4>
+
+                            <p>Tone</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <!-- <---mid box --->
+            <div class="row text-white">
+                <div class="col-7">
+                    <div class="small-box Dashboard-tab">
+                        <div class="inner">
+                            <p>Top energy consuming side</p>
+
+                            <!-- <p>New Orders</p> -->
+                            <ngx-charts-bar-vertical
+                                [view]="[500, 300]"
+                                [results]="saleData"
+                                [xAxisLabel]="'Products'"
+                                [legendTitle]="'Product Sale Chart'"
+                                [yAxisLabel]="'Sale'"
+                                [legend]="true"
+                                [showXAxisLabel]="true"
+                                [showYAxisLabel]="true"
+                                [xAxis]="true"
+                                [yAxis]="true"
+                                [gradient]="true"
+                                [scheme]="'forest'"
+                            >
+                            </ngx-charts-bar-vertical>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="small-box Dashboard-tab">
+                        <div class="inner">
+                            <P>renewable energy</P>
+
+                            <!-- <p>New Orders</p> -->
+                            <ngx-charts-advanced-pie-chart
+                                [results]="saleData"
+                                [view]="[400, 300]"
+                                [scheme]="'forest'"
+                            >
+                            </ngx-charts-advanced-pie-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-white">
+                    <div class="small-box Dashboard-tab">
+                        <div class="inner">
+                            <P>Total Energy Consumption by Source</P>
+
+                            <!-- <p>New Orders</p> -->
+                            <ngx-charts-area-chart
+                                class="text-white"
+                                [results]="areachart"
+                                [xAxisLabel]="'Products'"
+                                [yAxisLabel]="'Sale'"
+                                [view]="[950, 300]"
+                                [scheme]="'forest'"
+                                [showXAxisLabel]="true"
+                                [showYAxisLabel]="true"
+                                [xAxis]="true"
+                                [yAxis]="true"
+                            >
+                            </ngx-charts-area-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main row -->
+    </section>
+    <!-- /.content -->
+</div>

@@ -1,0 +1,103 @@
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="m-0 pl-2 text-white text-style font-size">
+                    Dashboard
+                </h3>
+            </div>
+
+            <!-- <<----MODEL POPUP ----->
+
+            <div
+                class="modal popup-model"
+                tabindex="-1"
+                role="dialog"
+                [ngStyle]="{display: display}"
+            >
+                <div class="modal-dialog popup-model" role="document">
+                    <div class="modal-content Dashboard-tab">
+                        <div class="modal-body">
+                            <form class="col-12">
+                                <select
+                                    class="form-control select2 Dashboard-tab text-white"
+                                >
+                                    <option class="text-white">Select</option>
+                                    <option class="text-white">Chennai</option>
+                                    <option class="text-white">Delhi</option>
+                                    <option class="text-white">
+                                        Bengaluru
+                                    </option>
+                                    <option class="text-white">Kolkata</option>
+                                    <option class="text-white">Indore</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-default"
+                                (click)="onCloseHandled()"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col -->
+
+            <div class="col-sm-6 d-flex flex-row justify-content-end">
+                <div
+                    class="mx-2 px-4 pt-2 d-flex flex-row rounded Regular shadow Dashboard-tab pointer"
+                >
+                    <img
+                        class="pt-1"
+                        src="assets/img/Location.png "
+                        height="20vh"
+                    />
+                    <p class="text-white pl-2" (click)="openModal()">
+                        Location
+                    </p>
+                </div>
+
+                <input
+                    type="date"
+                    class="text-white Dashboard-tab px-2 mx-2 pt-2 rounded Regular shadow"
+                />
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<div
+    class="row Dashboard-tab text-style rounded Regular shadow text-light d-flex flex-row justify-content-between mx-4 mb-3 pt-3 px-3"
+>
+    <div>
+        <p class="pointer" [routerLink]="['/']">Envirnoment</p>
+    </div>
+    <div><p class="pointer" [routerLink]="['/energy-section']">Energy</p></div>
+    <div>
+        <p class="pointer" [routerLink]="['/emission-section']">Emission</p>
+    </div>
+    <div><p class="pointer" [routerLink]="['/waste-section']">Waste</p></div>
+    <div><p class="pointer" [routerLink]="['/water-section']">Water</p></div>
+    <div><p class="pointer" [routerLink]="['/social-section']">Social</p></div>
+    <div>
+        <p class="pointer" [routerLink]="['/governance-section']">Governance</p>
+    </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid justify-content-center">
+        <!-- Small boxes (Stat box) -->
+        <h2 class="text-white text-style">We are on Water Section</h2>
+        <!-- /.row -->
+    </div>
+    <!-- Main row -->
+</section>
+<!-- /.content -->
